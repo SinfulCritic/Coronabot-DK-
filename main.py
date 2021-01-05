@@ -1,3 +1,4 @@
+import sys
 import re
 import slack
 import urllib.request
@@ -39,3 +40,5 @@ def db_write():
 db_write()
 
 slackmesseage()
+
+sys.exit(0)
