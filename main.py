@@ -38,6 +38,4 @@ def slackmesseage():
 
 slackmesseage()
 
-print(f'I dag er {dnum} personer testet positiv ud af {tnum} testede i alt. Det svarer til en positiv procent på {pnum} pct.')
-
 sys.exit(0)
