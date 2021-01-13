@@ -15,9 +15,9 @@ soup = BeautifulSoup(read_content, 'html.parser')
 
 tdAll = soup.find_all('td')
 
-raw_dnum = tdAll[21]
+raw_dnum = tdAll[10]
 
-raw_tnum = tdAll[17]
+raw_tnum = tdAll[4]
 
 str_tnum = raw_tnum.find('span').text
 
@@ -37,5 +37,7 @@ def slackmesseage():
     client.chat_postMessage(channel='corona-bot', text=f"I dag er {dnum} personer testet positiv ud af {tnum} testede i alt. Det svarer til en positiv procent på {pnum} pct.")
 
 slackmesseage()
+
+print(f'I dag er {dnum} personer testet positiv ud af {tnum} testede i alt. Det svarer til en positiv procent på {pnum} pct.')
 
 sys.exit(0)
