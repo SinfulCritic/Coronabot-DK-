@@ -29,12 +29,15 @@ dnum = float(str_dnum)
 
 pnum = float((dnum / tnum) * 100).__round__(2)
 
-with open('token.txt') as y:
+with open('token.txt', 'r') as y:
     token = y.read()
 
 def slackmesseage():
     client = slack.WebClient(token=token)
     client.chat_postMessage(channel='corona-bot', text=f"I dag er {dnum} personer testet positiv ud af {tnum} testede i alt. Det svarer til en positiv procent på {pnum} pct.")
+
+with open('db.txt', 'r+') as x:
+    x.write(f'DATE: {date}        Positive personer: {dnum}        Testede personer: {tnum}        Positiv procent: {pnum}')
 
 slackmesseage()
 
